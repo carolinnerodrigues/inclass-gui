@@ -1,8 +1,8 @@
 import React from 'react';
 
-// import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
-// import {LoginComponent} from './components/pages/Login/Login'
+import {LoginComponent} from './components/pages/Login/Login'
 
 // import AuthService from './services/auth'
 
@@ -36,7 +36,7 @@ import React from 'react';
 const Routes = () => (
     
         <Switch>
-        
+                <Route exact path='/Login' component={LoginComponent}/>
         </Switch>
    
 );

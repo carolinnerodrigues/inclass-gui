@@ -1,0 +1,53 @@
+@import "../../../_variables.scss";
+
+.panel{
+    min-width: 200px;
+    background-color: #ffffff;
+    // padding: 0px 10px 0px 10px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-top: 1px solid lighten($primary-color-optimum,10%);
+    box-shadow: 0 2px 1px rgba(0,0,0,.05);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: 30px;
+    margin: 10px;
+
+    .panel-header{
+        margin-left: 10px;
+        margin-right: 10px;
+        color: #6b6b6b;
+        font-size: 14px;
+        text-transform: uppercase;
+        // padding: 2px 0px 15px 0px ;
+        border-bottom:1px solid #f4f4f4;
+        height: 40px;
+
+        .panel-header-title{
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .panel-header-subtitle{
+            color: #c7c5c5;
+            font-size: 8px;
+            // line-height: 14px;
+            // float: left;
+            // top: -10px;
+            line-height: 15px;
+            float: left;
+            position: relative;
+            top: -14px;
+        }
+        .panel-actions{
+            float: right;
+            margin-top: -31px;
+        }
+        
+    }
+    .panel-body{
+        padding: 15px;
+    }
+}
