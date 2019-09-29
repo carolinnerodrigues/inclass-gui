@@ -61,7 +61,7 @@ export class LoginComponent extends Component{
                         </form>
 
                         <div id="formFooter">
-                        <a class="underlineHover" href="#">Esqueceu a senha?</a>
+                            <a class="underlineHover" href="#">Esqueceu a senha?</a>
                         </div>
                     </div>
                 </div>
