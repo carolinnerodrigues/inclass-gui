@@ -1,9 +1,7 @@
 import  React, { Component } from 'react';
-import { Button } from '../../atoms/Button/Button'
 import './Login.scss'
 import Api from '../../../services/api';
 import AuthService from "../../../services/auth";
-
 
 export class LoginComponent extends Component{
 
@@ -17,11 +15,13 @@ export class LoginComponent extends Component{
         if(AuthService.isAuthenticated()){
             this.props.history.push('/Home');
         }
-                    
+    }
+
+    login(){
+        window.location.replace("/Home")
     }
 
     handleChange = (event) => {
-        // console.log(event.target)
         this.setState({
             [event.target.id]: event.target.value
         });
@@ -54,10 +54,10 @@ export class LoginComponent extends Component{
             <div id="Login">
                 <div class="wrapper fadeInDown">
                     <div id="formContent">
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                         <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" value={this.state.name} onChange={this.handleChange}/>
                         <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha" value={this.state.password} onChange={this.handleChange}/>
-                        <input type="submit" class="fadeIn fourth" value="Entrar" onChange={this.handleChange}/>
+                        <input type="submit" class="fadeIn fourth" value="Entrar" onClick={this.login}/>
                         </form>
 
                         <div id="formFooter">
