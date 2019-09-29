@@ -1,60 +1,27 @@
 @import "../../../variables";
 
-.navbar{
-    background-color: #492b63e8
+#Navbar{
+  .box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  }
+  .flex-column {
+    -webkit-box-orient: horizontal!important;
+    -webkit-box-direction: normal!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+  }
+  .d-flex {
+      display: -webkit-box!important;
+      display: -ms-flexbox!important;
+      display: flex!important;
+  }
+  button{
+    background-color: #ffffff;
+    color: $primary-color;
+    border-color: $primary-color
+  }
+  button:hover{
+    background-color: $primary-color;
+    color: #ffffff;
+  }
 }
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 42px;
-    left: 0;
-    background-color: #2a153de8;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 90px;
-  }
-
-   li {
-    // display: block;
-    // float: left;
-    // width: 64px;
-    // height: 50px;
-    // margin-right: -5px;
-    // vertical-align: top;
-    // // background-repeat: no-repeat;
-    // // background-position: center center;
-    // // background-color: transparent;
-    opacity: 0.9;
-    // -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    // filter: alpha(opacity=70);
-    // line-height: 50px;
-    // text-align: center;
-  }
-
-  .navbar-toggler:hover{
-      background-color: #46304e
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #efeef0;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #84768a;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 30px;
-    margin-left: 50px;
-  }
