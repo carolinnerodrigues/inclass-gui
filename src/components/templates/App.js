@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../../router'
+import { Header } from '../organisms/Header/Header'
 
 import './App.scss';
 
@@ -10,6 +10,7 @@ export class App extends Component{
     return(
       <BrowserRouter>
         <div>
+          <Header />
           <Routes class="routes"/>
         </div>
       </BrowserRouter>

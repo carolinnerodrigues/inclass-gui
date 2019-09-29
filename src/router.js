@@ -1,10 +1,9 @@
 import React from 'react';
-
 import {Switch, Route, Redirect} from 'react-router-dom'
+import AuthService from './services/auth'
 
 import {LoginComponent} from './components/pages/Login/Login'
-
-import AuthService from './services/auth'
+import {HomeComponent} from './components/pages/Home/Home'
 
 const isAuthenticated = AuthService.isAuthenticated;
 
@@ -28,6 +27,7 @@ const Routes = () => (
     
         <Switch>
                 <Route exact path='/Login' component={LoginComponent}/>
+                <Route exact path='/' component={() => HomeComponent }/>
                 <Route path='*' exact={true} component={({ props }) => <h1>Not Found</h1>} />
         </Switch>
    

@@ -14,9 +14,9 @@ export class LoginComponent extends Component{
             name: "",
             password: ""
         }
-        // if(AuthService.isAuthenticated()){
-        //     this.props.history.push('/Login');
-        // }
+        if(AuthService.isAuthenticated()){
+            this.props.history.push('/Home');
+        }
                     
     }
 
@@ -33,7 +33,7 @@ export class LoginComponent extends Component{
         Api.login(this.state).then(
             response => {
                 AuthService.setAuthenticated(response.data.data.token);
-                this.props.history.push('/Login');
+                this.props.history.push('/Home');
                 console.log("ok",response.headers);
             },error => {
                 if(error.status===401){
