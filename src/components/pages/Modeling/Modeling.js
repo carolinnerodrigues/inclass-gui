@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import Panel from './../../atoms/Panel/Panel'
 import Table from '../../atoms/Table/Table'
 import Slider from '../../atoms/Slider/Slider'
+import {Button} from '../../atoms/Button/Button'
+
+import './Modeling.scss'
 
 export class ModelingComponent extends Component {
   
@@ -9,15 +12,19 @@ export class ModelingComponent extends Component {
     return( 
         <div id="Modeling">
             <div className="row">
-                <div id="Input">
-                    <div className="input-group">
-                        <select id="selector" className="custom-select">
-                            <option defaultValue>Selecione o Ano</option>
-                            <option value="1">2019</option>
-                            <option value="2">2020</option>
-                        </select>
-                        <button type="button" className="btn">Pesquisar</button>
-                    </div> 
+                <div className="col-4">
+                    <div id="Input">
+                        <div className="input-group">
+                            <select id="selector" className="custom-select">
+                                <option defaultValue>Selecione o Semestre</option>
+                                <option value="1">1/2019</option>
+                                <option value="1">2/2019</option>
+                                <option value="2">1/2020</option>
+                                <option value="2">2/2020</option>
+                            </select>
+                            <button type="button" className="btn">Pesquisar</button>
+                        </div> 
+                    </div>
                 </div>        
             </div>
             <div className="row">
@@ -31,37 +38,62 @@ export class ModelingComponent extends Component {
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 1</Table.TableItem.Element>
                                     <Table.TableItem.Element>Comum</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 40 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>40 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 2</Table.TableItem.Element>
                                     <Table.TableItem.Element>Comum</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 20 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 3</Table.TableItem.Element>
                                     <Table.TableItem.Element>Comum</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 20 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 4</Table.TableItem.Element>
                                     <Table.TableItem.Element>Laboratório de Informátca</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 40 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>40 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 5</Table.TableItem.Element>
                                     <Table.TableItem.Element>Laboratório de Informátca</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 20 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 6</Table.TableItem.Element>
                                     <Table.TableItem.Element>Comum</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 20 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                                 <Table.TableItem>
                                     <Table.TableItem.Element>Sala 7</Table.TableItem.Element>
                                     <Table.TableItem.Element>Comum</Table.TableItem.Element>
-                                    <Table.TableItem.Element>Até 20 Alunos</Table.TableItem.Element>
+                                    <Table.TableItem.Element>30 Alunos</Table.TableItem.Element>
+                                </Table.TableItem>
+                                <Table.TableItem>
+                                    <Table.TableItem.Element>Sala 8</Table.TableItem.Element>
+                                    <Table.TableItem.Element>Comum</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
+                                </Table.TableItem>
+                                <Table.TableItem>
+                                    <Table.TableItem.Element>Sala 9</Table.TableItem.Element>
+                                    <Table.TableItem.Element>Comum</Table.TableItem.Element>
+                                    <Table.TableItem.Element>30 Alunos</Table.TableItem.Element>
+                                </Table.TableItem>
+                                <Table.TableItem>
+                                    <Table.TableItem.Element>Sala 10</Table.TableItem.Element>
+                                    <Table.TableItem.Element>Comum</Table.TableItem.Element>
+                                    <Table.TableItem.Element>30 Alunos</Table.TableItem.Element>
+                                </Table.TableItem>
+                                <Table.TableItem>
+                                    <Table.TableItem.Element>Sala 11</Table.TableItem.Element>
+                                    <Table.TableItem.Element>Comum</Table.TableItem.Element>
+                                    <Table.TableItem.Element>50 Alunos</Table.TableItem.Element>
+                                </Table.TableItem>
+                                <Table.TableItem>
+                                    <Table.TableItem.Element>Sala 12</Table.TableItem.Element>
+                                    <Table.TableItem.Element>Laboratório de Informática</Table.TableItem.Element>
+                                    <Table.TableItem.Element>20 Alunos</Table.TableItem.Element>
                                 </Table.TableItem>
                             </Table>
                         </Slider>
@@ -191,6 +223,7 @@ export class ModelingComponent extends Component {
                             </Table>
                         </Slider> 
                     </Panel>
+                    <Button>Modificar</Button>
                 </div>
             </div>
       </div>
