@@ -11,7 +11,7 @@ export class App extends Component{
       <BrowserRouter>
         <div>
           <Header />
-          <Routes class="routes"/>
+          <Routes className="routes"/>
         </div>
       </BrowserRouter>
     )

@@ -1,0 +1,100 @@
+@import "./variables";
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin componentDefaultFonts() {
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Ubuntu, Roboto, Helvetica Neue, Arial, sans-serif;
+  font-weight: 400;
+  color: $primary-font-color;
+}
+
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin borderRadiusLeft($radius) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-bottomleft: $radius;
+}
+
+@mixin borderRadiusRight($radius) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-bottomright: $radius;
+}
+
+@mixin borderRadiusBottom($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  -webkit-border-topright-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-topleft: 0px;
+}
+@mixin borderRadiusTop($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-topright-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-topleft: $radius;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+}
+
+@mixin transitionEffect($element, $time, $effect) {
+  -webkit-transition: $element $time $effect;
+  -moz-transition: $element $time $effect;
+  -ms-transition: $element $time $effect;
+  transition: $element $time $effect;
+}
+
+@mixin transition($element, $time) {
+  -webkit-transition: $element $time;
+  -moz-transition: $element $time;
+  -ms-transition: $element $time;
+  transition: $element $time;
+}
+
+@mixin transform($transforms) {
+	transform: $transforms;
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

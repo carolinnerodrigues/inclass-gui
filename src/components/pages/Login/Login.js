@@ -52,16 +52,16 @@ export class LoginComponent extends Component{
     render(){
         return (
             <div id="Login">
-                <div class="wrapper fadeInDown">
+                <div className="wrapper fadeInDown">
                     <div id="formContent">
                         <form onSubmit={this.handleSubmit}>
-                        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" value={this.state.name} onChange={this.handleChange}/>
-                        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Senha" value={this.state.password} onChange={this.handleChange}/>
-                        <input type="submit" class="fadeIn fourth" value="Entrar" onClick={this.login}/>
+                        <input type="text" id="login" className="fadeIn second" name="login" placeholder="Email" value={this.state.name} onChange={this.handleChange}/>
+                        <input type="text" id="password" className="fadeIn third" name="login" placeholder="Senha" value={this.state.password} onChange={this.handleChange}/>
+                        <input type="submit" className="fadeIn fourth" value="Entrar" onClick={this.login}/>
                         </form>
 
                         <div id="formFooter">
-                            <a class="underlineHover" href="#">Esqueceu a senha?</a>
+                            <a className="underlineHover" href="#">Esqueceu a senha?</a>
                         </div>
                     </div>
                 </div>

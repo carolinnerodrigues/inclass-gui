@@ -1,0 +1,73 @@
+@import '../../../mixins';
+
+.table-rt{
+	@include componentDefaultFonts();
+	margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+	text-align: left;
+
+    thead{
+        tr{
+            height: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            th{
+                padding: 2px 15px;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+        }
+    }
+    tbody{
+        tr{
+            border-bottom: 1px solid #e0e0e0;
+            line-height: 25px;
+            td{
+                padding: 8px 15px;
+                white-space: nowrap;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                -ms-transition: all 0.5s;
+                transition: all 0.5s;
+                .avatar{
+                    border-radius: 100px;
+                    width: 30px;
+                    height: 30px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100px;
+                    }
+                }
+            }
+
+            &:hover{
+                td{
+                    background-color: #f8f6f6;
+                }
+            }
+
+            &:last-child{
+                border: none;
+			}
+			
+			
+		}
+		.line{
+			border-top: 3px inset #3180e1;
+		}
+    }
+
+    &.table-responsible{
+        display: table;
+        overflow: auto;
+    }
+
+    &.table-striped-rt{
+        tbody{
+            tr:nth-child(even){
+                background-color: #fafafa;
+            }
+        }
+    }
+}

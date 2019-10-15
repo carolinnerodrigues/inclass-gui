@@ -4,6 +4,7 @@ import AuthService from './services/auth'
 
 import {LoginComponent} from './components/pages/Login/Login'
 import {HomeComponent} from './components/pages/Home/Home'
+import {ModelingComponent} from './components/pages/Modeling/Modeling'
 
 const isAuthenticated = AuthService.isAuthenticated;
 
@@ -28,6 +29,7 @@ const Routes = () => (
         <Switch>
                 <Route exact path='/Login' component={LoginComponent}/>
                 <Route exact path='/' component={() => HomeComponent }/>
+                <Route exact path='/Modeling' component={() => ModelingComponent }/>
                 <Route path='*' exact={true} component={({ props }) => <h1>Not Found</h1>} />
         </Switch>
    
