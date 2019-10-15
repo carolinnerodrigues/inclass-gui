@@ -1,0 +1,196 @@
+@import "../../../variables.scss";
+
+/* colors */
+$blue: $primary-color;
+$dark: #333;
+
+$accent: $blue;
+$accent-inactive: desaturate($accent, 85%);
+$secondary: $accent-inactive;
+
+/* tab setting */
+$tab-count: 4;
+$indicator-width: 50px;
+$indicator-height: 4px;
+
+/* breakpoints */
+$breakpoints: (
+  medium: #{$tab-count*250px},
+  small: #{$tab-count*150px}
+);
+
+/* selectors relative to radio inputs */
+$label-selector: "~ ul > li";
+$slider-selector: "~ .slider";
+$content-selector: "~ .content > section";
+
+#Modeling{
+    @mixin tabs(
+        $label-selector: $label-selector,
+        $slider-selector: $slider-selector,
+        $content-selector: $content-selector) {
+        
+        @for $i from 1 through $tab-count {
+            &:nth-of-type(#{$i}):checked {
+                #{$label-selector}:nth-child(#{$i}) {
+                    @content;
+                }
+
+                #{$slider-selector} {
+                    transform: translateX(#{100% * ($i - 1)});
+                }
+
+                #{$content-selector}:nth-child(#{$i}) {
+                    display: block;
+                }
+            }
+        }
+    }
+    // .panel-body{
+    //     background-color: #adadb131;
+    // }
+    
+    .tabs {
+        /*exibiton radio*/
+        input[name="tab-control"] {
+            display: none;
+        }  
+        
+        /*text*/
+        .content section h2, ul li label {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 18px;
+            color: $accent;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: -4px;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            
+            li {
+                box-sizing: border-box;
+                flex: 1;
+                width: #{100%/$tab-count};
+                padding: 0 10px;
+                text-align: center;
+            
+                label {
+                    transition: all 0.3s ease-in-out;
+                    color: $secondary;
+                    padding: 5px auto;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: block;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+                    white-space: nowrap;
+                    
+                    &:hover,
+                    &:focus,
+                    &:active {
+                    outline: 0;
+                    color: lighten($dark, 10%);
+                    transform: scale(1.05);
+                    }
+                }
+            }
+        }
+        
+        .slider {
+            position: relative;
+            width: #{100%/$tab-count};
+            transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+            .indicator {
+            position: relative;
+            width: 20px;
+            max-width: 100%;
+            margin: 0 auto;
+            height: $indicator-height;
+            background: $accent;
+            border-radius: 1px;     
+            }
+        }
+        
+        .content {
+            margin-top: 50px;
+            
+            section {
+            display: none;
+            animation: {
+                name: content;
+                direction: normal;
+                duration: 0.3s;
+                timing-function: ease-in-out;
+                iteration-count: 1;
+            }
+            line-height: 1.4;
+            padding-bottom: 30px;
+            }
+        }
+    
+        /*Exibe paineis*/
+        input[name="tab-control"] {
+            @include tabs {
+                > label {
+                    cursor: default;
+                    color: $accent;
+                }
+            }
+        }
+    }
+
+    #Input{
+        .input-group{
+            // margin-right: 10px;
+            margin-bottom: 40px;
+    
+            select{
+                max-width: 150px;
+                box-shadow: 0 2px 10px rgba(155, 153, 153, 0.25), 0 5px 5px rgba(182, 179, 179, 0.22);
+                border-radius: 5px;
+                border-bottom-right-radius: 0px;
+                border-top-right-radius: 0px;
+                text-align: center;
+                padding: 18px;
+            }
+            input{
+                max-width: 300px;
+                box-shadow: 0 2px 10px rgba(155, 153, 153, 0.25), 0 5px 5px rgba(182, 179, 179, 0.22);
+                border-radius: 5px;
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+                padding: 18px;
+                margin-right: 15px;
+            }
+            input:focus, select:focus{
+                box-shadow: 0 2px 10px rgba(56, 56, 56, 0.25), 0 5px 5px rgba(83, 82, 82, 0.22);
+                border-width: 1px;
+                border-color: rgb(134, 158, 224);
+                // border: 0 none;
+                outline: 0;
+            } 
+            button{
+                background-color: #ffffff;
+                border-color: $primary-color;
+                color: $primary-color;
+                border-radius: 5px;
+                
+            }
+            button:hover{
+                background-color: $primary-color;
+                border-color: $primary-color;
+                color: #ffffff;
+                box-shadow: 0 2px 10px rgba(56, 56, 56, 0.25), 0 5px 5px rgba(83, 82, 82, 0.22);
+            }
+        }
+    }
+}
+
+

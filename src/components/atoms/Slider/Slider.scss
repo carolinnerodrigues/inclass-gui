@@ -1,0 +1,41 @@
+@import "../../../mixins";
+
+.slider-rt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  .slider-content {
+    vertical-align: middle;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0px 0px 0px 0px;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    > * {
+      margin: 10px;
+      display: inline-block;
+    }
+  }
+  
+  .slider-dots{
+    //display: inline-flex;
+    /* text-align: center; */
+    left: 50%;
+    position: relative;
+    margin-left: -130px;
+    .dot{
+        a{
+            content:'\e001';
+            //height: 5px;
+            //width: 5px;
+            padding: 2px;
+            border:1px solid;
+        }
+    }
+  }
+}
