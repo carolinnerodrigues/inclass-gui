@@ -21,9 +21,11 @@ API.addRequestTransform(request => {
 });
 
 const login = (user) => API.post('/auth', user);
+const getDatas = (option) => API.get('/Modeling',{option: option}) 
 
 const APIS = {
     login: login,
+    getDatas: (option) => getDatas(option), 
 }
 
 export default APIS;
