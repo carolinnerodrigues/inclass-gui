@@ -11,17 +11,32 @@ export class ModelingComponent extends Component {
 // EX: CLIQUEI NA SALA 1, EXIBE SEU QUADRO DE HORARIOS, SE CLICO NO 2, EXIBE SEUS HORARIOS...
 // TORNAR O QUADRO 2 MODIFICAVEL, A IDEIA É EM CADA OPÇÃO DA SEMANA TER UM "SELECT" TORNANDO POSSIVEL A MODIFICAÇÃO
 // CRIAR METODOS PARA RECEBER DADOS DO BACK
+    
     constructor(props){
         super(props);
         this.state = {
-           
+            option: '',
+            showSearch: false, 
+            triggerSearch: false,
         }
+        this.handleSubmit = this.handleSubmit.bind(this); 
+        this.handleChange = this.handleChange.bind(this); 
     }
 
-   
+    handleChange({ target }) { 
+        this.setState({ 
+          [target.name]: target.value,  
+          triggerSearch: false, 
+          loading: false 
+        }); 
+    } 
+ 
+    handleSubmit = (event) =>{ 
+        event.preventDefault(); 
+        this.setState({showSearch: true, triggerSearch:true}); 
+    } 
 
     render() {
-        let datas = this.state.getDatas;
         return( 
             <div id="Modeling">
                 <div className="row">
